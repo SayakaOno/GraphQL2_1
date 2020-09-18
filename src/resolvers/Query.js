@@ -18,8 +18,8 @@ const Query = {
       );
     });
   },
-  comments() {
-    return comments;
+  comments(parent, args, { db }, info) {
+    return db.comments;
   },
   me() {
     return {
