@@ -1,1 +1,3 @@
-node_modules
+graphql-basics/node_modules
+graphql-prisma/node_modules
+graphql-prisma/src/generated
