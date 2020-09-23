@@ -88,10 +88,10 @@ enum MutationType {
 
 type PostSubscriptionPayLoad {
   mutation: MutationType!
-  data: Post!
+  node: Post
 }
 
 type CommentSubscriptionPayLoad {
   mutation: MutationType!
-  data: Comment!
+  node: Comment
 }
