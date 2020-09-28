@@ -1,4 +1,5 @@
-graphql-basics/node_modules
-graphql-prisma/node_modules
-graphql-prisma/src/generated
+graphql-basics/node_modules/
+graphql-prisma/node_modules/
+graphql-prisma/src/generated/
 graphql-prisma/src/dbinfo.js
+graphql-prisma/config/
