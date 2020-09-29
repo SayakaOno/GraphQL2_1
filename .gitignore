@@ -1,5 +1,7 @@
 graphql-basics/node_modules/
 graphql-prisma/node_modules/
+apollo-client/node_modules/
+apollo-client/.cache/
 graphql-prisma/src/generated/
 graphql-prisma/src/dbinfo.js
 graphql-prisma/config/
