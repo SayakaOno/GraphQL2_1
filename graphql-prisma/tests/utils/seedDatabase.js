@@ -12,19 +12,38 @@ const userOne = {
   jwt: undefined
 };
 
+const postOne = {
+  input: {
+    title: 'first post',
+    body: 'This is my very first post!',
+    published: true
+  },
+  post: undefined
+};
+
+const postTwo = {
+  input: {
+    title: 'second post',
+    body: 'I am still working on it...',
+    published: false
+  },
+  post: undefined
+};
+
 const seedDatabase = async () => {
   await prisma.mutation.deleteManyPosts();
   await prisma.mutation.deleteManyUsers();
 
+  // Create user one
   userOne.user = await prisma.mutation.createUser({
     data: userOne.input
   });
   userOne.jwt = jwt.sign({ userId: userOne.user.id }, process.env.JWT_SECRET);
-  await prisma.mutation.createPost({
+
+  // Create post one
+  postOne.post = await prisma.mutation.createPost({
     data: {
-      title: 'first post',
-      body: 'This is my very first post!',
-      published: true,
+      ...postOne.input,
       author: {
         connect: {
           id: userOne.user.id
@@ -32,11 +51,11 @@ const seedDatabase = async () => {
       }
     }
   });
-  await prisma.mutation.createPost({
+
+  // Create post two
+  postTwo.post = await prisma.mutation.createPost({
     data: {
-      title: 'second post',
-      body: 'I am still working on it...',
-      published: false,
+      ...postTwo.input,
       author: {
         connect: {
           id: userOne.user.id
@@ -46,4 +65,4 @@ const seedDatabase = async () => {
   });
 };
 
-export { seedDatabase as default, userOne };
+export { seedDatabase as default, userOne, postOne, postTwo };
