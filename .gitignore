@@ -5,3 +5,4 @@ apollo-client/.cache/
 graphql-prisma/src/generated/
 graphql-prisma/src/dbinfo.js
 graphql-prisma/config/
+graphql-prisma-boilerplate/config/
